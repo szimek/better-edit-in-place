@@ -17,6 +17,12 @@ put '/lists/1.json' do
   list.to_json
 end
 
+put '/lists/2.json' do
+  status 422
+  list = { :title => 'Failure' }
+  list.to_json
+end
+
 put '/users/2.json' do
   user = { :user => { :first_name => params['user']['first_name'] } }
   user.to_json
@@ -26,3 +32,4 @@ put '/posts/5.json' do
   post = { :post => { :author_id => params['post']['author_id'] } }
   post.to_json
 end
+

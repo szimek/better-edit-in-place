@@ -180,9 +180,10 @@ var Editable = Class.create({
 
     // Event handler that restores original editable value and hides form.
     cancel: function(event) {
+        this.editForm.hide();
+        this.editForm.enable();
         this.element.show();
         this.editField.element.value = this.value;
-        this.editForm.hide();
         if (event) {
             event.stop();
         }
