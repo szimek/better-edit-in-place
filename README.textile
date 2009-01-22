@@ -16,7 +16,7 @@ h3. Features
 * Support for foreign key parameters for select fields
 * Customizable. One can set: 
 ** class for edit element
-** class submit and cancel buttons
+** class for submit and cancel buttons
 ** custom functions to be called on Ajax.Request onLoading and onComplete events 
    i.e. to set up a spinner.
 
@@ -147,7 +147,7 @@ To load data directly from Rails, you can use to_json method:
     element.editable({
       editField: {
         'type': 'select',
-        'options': <%= Colors.all.map{|c| [c.name, c.id.to_s]}.to_json %>
+        'options': <%= Colors.all.map{|c| [c.name.capitalize, c.name]}.to_json %>
       }
     });
 
